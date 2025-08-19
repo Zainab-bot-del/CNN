@@ -78,21 +78,40 @@
             flex-shrink: 0;
         }
         
-        /* Dark Side Cards */
-        .dark-side {
-            border-left: 4px solid var(--secondary);
-            padding-left: 1rem;
-            margin-bottom: 1.5rem;
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
-        .dark-side h4 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
+        .social-links a {
+            display: flex;
+            align-items: center;
+            color: white;
+            background: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .social-links i {
+            margin-right: 8px;
+            font-size: 1.2rem;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             section {
                 padding: 1rem;
+            }
+            .social-links {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -104,6 +123,16 @@
         <h1>Zainab Tehreem "Humanity Wali"</h1>
         <p>Creative Technologist | Content Creator | Young Innovator</p>
         <p><i class="fas fa-map-marker-alt"></i> Pakistan | Born: April 30, 2012</p>
+        
+        <!-- Social Links Section -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.linkedin.com/in/zainab-tehreem-justice-wali-39b850372/" target="_blank">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+        </div>
     </header>
 
     <main>
@@ -156,25 +185,6 @@
             </div>
         </section>
 
-        <!-- Growth Areas -->
-        <section>
-            <div class="card">
-                <h2><i class="fas fa-seedling"></i> Growth Journey</h2>
-                
-                <div class="dark-side">
-                    <h4>Perfectionism</h4>
-                    <p><strong>Manifests as:</strong> Wanting everything to be flawless before sharing</p>
-                    <p><strong>Improvement strategy:</strong> Practicing "good enough" mentality for initial versions</p>
-                </div>
-                
-                <div class="dark-side">
-                    <h4>Overthinking</h4>
-                    <p><strong>Manifests as:</strong> Worrying about potential mistakes or future outcomes</p>
-                    <p><strong>Improvement strategy:</strong> Mindfulness techniques and breaking projects into smaller steps</p>
-                </div>
-            </div>
-        </section>
-
         <!-- Goals Section -->
         <section>
             <div class="card">
@@ -198,11 +208,10 @@
     </main>
 
     <footer style="background: var(--dark); color: white; text-align: center; padding: 2rem;">
-        <h3>Let's Connect!</h3>
+        <h3>Let's Connect Further!</h3>
         <div style="margin: 1rem 0; font-size: 1.5rem;">
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-github"></i></a>
-            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank" style="color: white; margin: 0 10px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/zainab-tehreem-justice-wali-39b850372/" target="_blank" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin-in"></i></a>
         </div>
         <p>© 2024 Zainab Tehreem | Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i></p>
     </footer>
