@@ -6,67 +6,91 @@
 <title>Zainab Tehreem Portfolio</title>
 <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #f0f2f5; color: #333; }
+    body { background: #f0f2f5; color: #333; line-height: 1.6; }
 
-    a { text-decoration: none; color: #3498db; }
+    a { text-decoration: none; color: #0a66c2; transition: color 0.2s; }
+    a:hover { color: #004182; text-decoration: underline; }
+    .btn { display: inline-block; padding: 6px 12px; background: #0a66c2; color: white; border-radius: 16px; font-size: 0.9em; font-weight: 600; }
+    .btn:hover { background: #004182; text-decoration: none; }
 
     /* Top Navigation */
     .topnav { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; flex-wrap: wrap; }
-    .topnav .logo { font-weight: bold; color: #6a1b9a; font-size: 1.2em; }
-    .topnav .search input { padding: 5px 10px; border-radius: 20px; border: 1px solid #ccc; width: 180px; }
+    .topnav .logo { font-weight: bold; color: #0a66c2; font-size: 1.2em; }
+    .topnav .search input { padding: 8px 15px; border-radius: 4px; border: 1px solid #ddd; width: 280px; background: #eef3f8; }
     .topnav .menu { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
-    .topnav .menu a { font-weight: 500; color: #333; }
-    .topnav .menu .profile { display: flex; align-items: center; gap:5px; font-weight: 600; }
+    .topnav .menu a { font-weight: 500; color: #666; display: flex; flex-direction: column; align-items: center; font-size: 0.8em; }
+    .topnav .menu a:hover { color: #0a66c2; }
+    .topnav .menu a i { font-size: 1.4em; margin-bottom: 2px; }
+    .topnav .menu .profile { display: flex; align-items: center; gap:5px; font-weight: 600; color: #666; }
+    .topnav .menu .profile img { width: 24px; height: 24px; border-radius: 50%; }
 
     /* Layout */
-    .container { display: flex; max-width: 1400px; margin: 20px auto; }
-    .left { width: 280px; background: #6a1b9a; color: #fff; padding: 30px; text-align: center; border-radius:10px; margin-right: 20px; }
-    .left img { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #fff; object-fit: cover; }
-    .left h2 { margin-bottom: 5px; }
-    .left p { margin-bottom: 10px; font-size: 0.9em; }
-    .left .stats { background: rgba(255,255,255,0.1); padding: 10px; margin: 10px 0; border-radius: 5px; }
-    .left .stats p { font-size: 0.9em; margin: 5px 0; }
-    .left a { display:block; margin:5px 0; color:#fff; font-weight:bold; }
+    .container { display: flex; max-width: 1400px; margin: 20px auto; gap: 20px; }
+    .left { width: 280px; background: #fff; color: #333; padding: 20px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); align-self: flex-start; position: sticky; top: 80px; }
+    .left img { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #fff; object-fit: cover; display: block; margin: 0 auto 15px; }
+    .left h2 { margin-bottom: 5px; font-size: 1.3em; color: #000; }
+    .left p { margin-bottom: 10px; font-size: 0.9em; color: #666; }
+    .left .stats { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; margin: 15px 0; }
+    .left .stats p { font-size: 0.9em; margin: 5px 0; color: #666; }
+    .left .stats p span { color: #0a66c2; font-weight: 600; }
+    .left .nav-item { display: flex; align-items: center; padding: 8px 0; color: #666; }
+    .left .nav-item i { margin-right: 10px; font-size: 1.1em; width: 20px; text-align: center; }
+    .left .nav-item:hover { color: #0a66c2; }
 
-    .center { flex: 2; padding: 0 20px; }
-    .right { width: 320px; padding: 0 20px; }
+    .center { flex: 2; }
+    .right { width: 320px; }
 
-    section { background: #fff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
-    section h2 { border-bottom: 2px solid #6a1b9a; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+    section { background: #fff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    section h2 { font-size: 1.2em; color: #000; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #eee; display: block; }
+    section h3 { font-size: 1.1em; color: #000; margin-bottom: 10px; }
 
-    ul { list-style: square inside; }
+    ul { list-style: none; }
+    ul li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+    ul li:before { content: "•"; color: #0a66c2; position: absolute; left: 0; }
 
-    .grid { display: flex; flex-wrap: wrap; gap: 20px; }
-    .card { flex: 1; min-width: 200px; background: #f7f7f7; padding: 15px; border-radius: 10px; }
-    .card h3 { color: #6a1b9a; margin-bottom: 10px; }
+    .grid { display: flex; flex-wrap: wrap; gap: 15px; }
+    .card { flex: 1; min-width: 200px; background: #f7f7f7; padding: 15px; border-radius: 8px; border-left: 3px solid #0a66c2; }
+    .card h3 { color: #0a66c2; margin-bottom: 10px; font-size: 1em; }
 
     /* Feed */
-    .feed-section { background: #f7f7f7; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
-    .feed-section h3 { color: #6a1b9a; margin-bottom: 10px; }
-    .feed-item { background: #fff; padding: 10px; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-    .feed-item p { font-size: 0.9em; margin-bottom:5px; }
-    .feed-item a { font-size:0.9em; color:#6a1b9a; }
+    .feed-section { background: #fff; padding: 15px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .feed-section h3 { color: #000; margin-bottom: 15px; font-size: 1.1em; }
+    .feed-item { padding: 12px 0; border-bottom: 1px solid #eee; }
+    .feed-item:last-child { border-bottom: none; }
+    .feed-item p { font-size: 0.9em; margin-bottom: 8px; color: #666; }
+    .feed-item p strong { color: #000; }
+    .feed-item .meta { font-size: 0.8em; color: #999; margin-top: 5px; }
+    .feed-links { display: flex; gap: 15px; margin-top: 10px; font-size: 0.8em; }
 
-    footer { text-align:center; padding:20px; font-size:0.9em; color:#555; }
+    footer { text-align:center; padding:20px; font-size:0.9em; color:#666; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 10px; }
+    .footer-links a { color: #666; font-size: 0.8em; }
 
-    @media(max-width:1200px){ .container { flex-direction: column; } .left, .right, .center{ width: 100%; margin:10px 0; } }
+    @media(max-width:1200px){ 
+        .container { flex-direction: column; } 
+        .left, .right, .center { width: 100%; } 
+        .left { position: static; }
+    }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <!-- Top Navigation -->
 <div class="topnav">
-    <div class="logo">Zainab Tehreem Portfolio</div>
+    <div class="logo"><i class="fab fa-linkedin"></i></div>
     <div class="search"><input type="text" placeholder="Search"></div>
     <div class="menu">
-        <a href="#">Recent</a>
-        <a href="#">Home</a>
-        <a href="#">My Network</a>
-        <a href="#">Jobs</a>
-        <a href="#">Messaging</a>
-        <a href="#">Notifications</a>
-        <div class="profile">Zainab Tehreem Justice Wali</div>
-        <a href="#" style="color:#6a1b9a; font-weight:bold;">Try Premium for PKR0</a>
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-users"></i> Network</a>
+        <a href="#"><i class="fas fa-briefcase"></i> Jobs</a>
+        <a href="#"><i class="fas fa-comment-dots"></i> Messaging</a>
+        <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+        <div class="profile">
+            <img src="https://via.placeholder.com/24" alt="Profile">
+            <span>Me <i class="fas fa-caret-down"></i></span>
+        </div>
+        <a href="#" class="btn"><i class="fas fa-crown"></i> Try Premium</a>
     </div>
 </div>
 
@@ -76,56 +100,71 @@
     <div class="left">
         <img src="https://via.placeholder.com/150" alt="Zainab Tehreem">
         <h2>Zainab Tehreem Justice Wali</h2>
-        <p>13-years-old | Level 1 student at Rehan School Online Academy</p>
-        <p>Islamabad, Islāmābād</p>
+        <p>Student at Rehan School Online Academy</p>
+        <p>Islamabad, Pakistan</p>
+        
         <div class="stats">
-            <p>Profile viewers: 24</p>
-            <p>Post impressions: 27</p>
+            <p><span>24</span> profile viewers</p>
+            <p><span>27</span> post impressions</p>
         </div>
-        <a href="#">Unlock Premium tools & insights</a>
-        <a href="#">Saved items</a>
-        <a href="#">Groups</a>
-        <a href="#">Newsletters</a>
-        <a href="#">Events</a>
+        
+        <a href="#" class="nav-item"><i class="fas fa-user"></i> View profile</a>
+        <a href="#" class="nav-item"><i class="fas fa-bookmark"></i> Saved items</a>
+        <a href="#" class="nav-item"><i class="fas fa-users"></i> Groups</a>
+        <a href="#" class="nav-item"><i class="fas fa-newspaper"></i> Newsletters</a>
+        <a href="#" class="nav-item"><i class="fas fa-calendar-alt"></i> Events</a>
     </div>
 
     <!-- Center Portfolio -->
     <div class="center">
         <section>
-            <h2>About Me</h2>
-            <p>Hi! I’m <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I’m curious, creative, and passionate about technology, learning, and helping others.</p>
+            <h2>About</h2>
+            <p>Hi! I'm <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I'm curious, creative, and passionate about technology, learning, and helping others.</p>
+            <a href="#" class="btn" style="margin-top: 10px;">Show more</a>
         </section>
 
         <section>
             <h2>Personality Traits</h2>
             <ul>
-                <li>Curious & Intelligent</li>
-                <li>Creative & Imaginative</li>
-                <li>Ambitious & Goal-Oriented</li>
-                <li>Empathetic & Caring</li>
-                <li>Tech-Savvy & Resourceful</li>
+                <li>Curious & Intelligent - Always eager to learn new things and expand my knowledge</li>
+                <li>Creative & Imaginative - Love developing stories, apps, and creative content</li>
+                <li>Ambitious & Goal-Oriented - Set clear objectives and work diligently to achieve them</li>
+                <li>Empathetic & Caring - Enjoy helping and motivating others</li>
+                <li>Tech-Savvy & Resourceful - Quick to adapt to new technologies and find solutions</li>
             </ul>
         </section>
 
         <section>
             <h2>Strengths</h2>
             <div class="grid">
-                <div class="card"><h3>Fast Learner</h3><p>Quickly picks up languages, coding, and AI skills.</p></div>
-                <div class="card"><h3>Creative Thinker</h3><p>Develops stories, apps, and YouTube content.</p></div>
-                <div class="card"><h3>Persistent</h3><p>Works hard and continues even through challenges.</p></div>
-                <div class="card"><h3>Helpful</h3><p>Loves teaching and inspiring others online.</p></div>
+                <div class="card">
+                    <h3><i class="fas fa-bolt"></i> Fast Learner</h3>
+                    <p>Quickly picks up languages, coding, and AI skills. Mastered Python basics in just 2 weeks.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-lightbulb"></i> Creative Thinker</h3>
+                    <p>Develops stories, apps, and YouTube content. Created 3 original web projects this year.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-dumbbell"></i> Persistent</h3>
+                    <p>Works hard and continues even through challenges. Completed 100-day coding challenge.</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-hands-helping"></i> Helpful</h3>
+                    <p>Loves teaching and inspiring others online. Helped 5 classmates with their coding projects.</p>
+                </div>
             </div>
         </section>
 
         <section>
             <h2>Hobbies & Interests</h2>
             <ul>
-                <li>Learning languages (Urdu, English, Korean)</li>
-                <li>YouTube & content creation</li>
-                <li>Reading, writing, storytelling</li>
-                <li>AI, coding, tech exploration</li>
-                <li>Music & singing</li>
-                <li>Helping and motivating others</li>
+                <li><strong>Languages:</strong> Learning Urdu, English, and Korean</li>
+                <li><strong>Content Creation:</strong> YouTube videos about learning and technology</li>
+                <li><strong>Reading & Writing:</strong> Especially science fiction and personal development</li>
+                <li><strong>Technology:</strong> AI, coding (Python, HTML/CSS), tech exploration</li>
+                <li><strong>Music:</strong> Singing and learning to play instruments</li>
+                <li><strong>Community:</strong> Helping and motivating peers in online learning communities</li>
             </ul>
         </section>
     </div>
@@ -133,39 +172,68 @@
     <!-- Right Feed -->
     <div class="right">
         <div class="feed-section">
-            <h3>Today’s Puzzle Games</h3>
-            <div class="feed-item"><p>Zip #155 – Complete the path</p></div>
-            <div class="feed-item"><p>Mini Sudoku #8 – The classic game, made mini</p></div>
-            <div class="feed-item"><p>Tango #316 – Harmonize the grid</p></div>
-            <a href="#">Show more</a> | <a href="#">Add to your feed</a>
+            <h3>Today's Puzzle Games</h3>
+            <div class="feed-item">
+                <p><strong>Zip #155</strong></p>
+                <p>Complete the path in this logic puzzle</p>
+                <div class="meta">2,345 players today</div>
+                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Play</a>
+            </div>
+            <div class="feed-item">
+                <p><strong>Mini Sudoku #8</strong></p>
+                <p>The classic game, made mini for quick solving</p>
+                <div class="meta">1,892 players today</div>
+                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Play</a>
+            </div>
+            <div class="feed-links">
+                <a href="#">Show more</a>
+                <a href="#">Add to your feed</a>
+            </div>
         </div>
 
         <div class="feed-section">
             <h3>Business Insights</h3>
-            <div class="feed-item"><p>Company • Internet Publishing</p></div>
+            <div class="feed-item">
+                <p><strong>Internet Publishing Trends</strong></p>
+                <p>See how content creation is evolving in 2025</p>
+                <div class="meta">3,456 followers</div>
+                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Follow</a>
+            </div>
         </div>
 
         <div class="feed-section">
-            <h3>People You May Follow</h3>
-            <div class="feed-item"><p><strong>Shahid Anwar</strong><br>Founder of Shilajit Energy Drink | Owner at Shahid Anwar LLC | Owner Of MKP Homes | Owner Of One Percent Inc | Shahid University Inc</p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Rehmat EmpowermentWala</strong><br>Lead Facilitator at Rehan School Online Academy | Former Head of Interview & Podcast Dept – Rehan School | Podcaster at Empowering Minds</p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Usman Leadershipwala</strong></p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Rehan Naeem</strong></p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Masroor CanvaWala</strong></p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Ali Ahsan Creative wala</strong></p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Mahrose Technologywali</strong></p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Christine Hiebel</strong></p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Jonathan Mast</strong></p><a href="#">Follow</a></div>
-            <div class="feed-item"><p><strong>Joanna Chołuj</strong></p><a href="#">Follow</a></div>
-            <a href="#">View all recommendations</a>
+            <h3>People You May Know</h3>
+            <div class="feed-item">
+                <p><strong>Shahid Anwar</strong></p>
+                <p>Founder of Shilajit Energy Drink | Entrepreneur</p>
+                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Connect</a>
+            </div>
+            <div class="feed-item">
+                <p><strong>Rehmat EmpowermentWala</strong></p>
+                <p>Lead Facilitator at Rehan School Online Academy</p>
+                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Connect</a>
+            </div>
+            <div class="feed-links">
+                <a href="#">View all recommendations</a>
+            </div>
         </div>
 
-        <div class="feed-section">
-            <p>About | Accessibility | Help Center | Privacy & Terms | Ad Choices | Advertising | Business Services | Get the LinkedIn app | More</p>
-            <p>LinkedIn Corporation © 2025 | Zainab Tehreem Justice Wali | Status: online | Messaging</p>
-        </div>
+        <footer>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Help Center</a>
+                <a href="#">Privacy & Terms</a>
+                <a href="#">Ad Choices</a>
+                <a href="#">Advertising</a>
+                <a href="#">Business Services</a>
+                <a href="#">Get the LinkedIn app</a>
+                <a href="#">More</a>
+            </div>
+            <p>LinkedIn Corporation © 2025</p>
+            <p>Zainab Tehreem Justice Wali | Status: online | Messaging</p>
+        </footer>
     </div>
-
 </div>
 
 </body>
