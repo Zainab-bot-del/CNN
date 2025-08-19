@@ -1,240 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zainab Tehreem Portfolio</title>
-<style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #f0f2f5; color: #333; line-height: 1.6; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zainab Tehreem | LinkedIn Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a66c2;
+            --primary-dark: #004182;
+            --text: #333;
+            --text-light: #666;
+            --border: #e0e0e0;
+            --card-bg: #fff;
+            --body-bg: #f5f5f5;
+        }
 
-    a { text-decoration: none; color: #0a66c2; transition: color 0.2s; }
-    a:hover { color: #004182; text-decoration: underline; }
-    .btn { display: inline-block; padding: 6px 12px; background: #0a66c2; color: white; border-radius: 16px; font-size: 0.9em; font-weight: 600; }
-    .btn:hover { background: #004182; text-decoration: none; }
+        /* Dark Mode (Uncomment to enable) */
+        /*
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #f0f0f0;
+                --text-light: #ccc;
+                --border: #444;
+                --card-bg: #222;
+                --body-bg: #121212;
+            }
+        }
+        */
 
-    /* Top Navigation */
-    .topnav { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; flex-wrap: wrap; }
-    .topnav .logo { font-weight: bold; color: #0a66c2; font-size: 1.2em; }
-    .topnav .search input { padding: 8px 15px; border-radius: 4px; border: 1px solid #ddd; width: 280px; background: #eef3f8; }
-    .topnav .menu { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
-    .topnav .menu a { font-weight: 500; color: #666; display: flex; flex-direction: column; align-items: center; font-size: 0.8em; }
-    .topnav .menu a:hover { color: #0a66c2; }
-    .topnav .menu a i { font-size: 1.4em; margin-bottom: 2px; }
-    .topnav .menu .profile { display: flex; align-items: center; gap:5px; font-weight: 600; color: #666; }
-    .topnav .menu .profile img { width: 24px; height: 24px; border-radius: 50%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    /* Layout */
-    .container { display: flex; max-width: 1400px; margin: 20px auto; gap: 20px; }
-    .left { width: 280px; background: #fff; color: #333; padding: 20px; border-radius:10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); align-self: flex-start; position: sticky; top: 80px; }
-    .left img { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #fff; object-fit: cover; display: block; margin: 0 auto 15px; }
-    .left h2 { margin-bottom: 5px; font-size: 1.3em; color: #000; }
-    .left p { margin-bottom: 10px; font-size: 0.9em; color: #666; }
-    .left .stats { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 10px 0; margin: 15px 0; }
-    .left .stats p { font-size: 0.9em; margin: 5px 0; color: #666; }
-    .left .stats p span { color: #0a66c2; font-weight: 600; }
-    .left .nav-item { display: flex; align-items: center; padding: 8px 0; color: #666; }
-    .left .nav-item i { margin-right: 10px; font-size: 1.1em; width: 20px; text-align: center; }
-    .left .nav-item:hover { color: #0a66c2; }
+        body {
+            background: var(--body-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-    .center { flex: 2; }
-    .right { width: 320px; }
+        /* Buttons & Links */
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: white;
+            border-radius: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: rgba(10, 102, 194, 0.1);
+        }
 
-    section { background: #fff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    section h2 { font-size: 1.2em; color: #000; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid #eee; display: block; }
-    section h3 { font-size: 1.1em; color: #000; margin-bottom: 10px; }
+        /* Header */
+        .topnav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 10px 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .logo i {
+            margin-right: 8px;
+        }
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        .nav-links a i {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding-left: 15px;
+            border-left: 1px solid var(--border);
+        }
+        .profile-pic {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-    ul { list-style: none; }
-    ul li { margin-bottom: 8px; padding-left: 20px; position: relative; }
-    ul li:before { content: "•"; color: #0a66c2; position: absolute; left: 0; }
+        /* Main Layout */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 0 5%;
+        }
+        .left-sidebar {
+            width: 25%;
+            position: sticky;
+            top: 80px;
+            align-self: flex-start;
+        }
+        .main-content {
+            width: 50%;
+        }
+        .right-sidebar {
+            width: 25%;
+        }
 
-    .grid { display: flex; flex-wrap: wrap; gap: 15px; }
-    .card { flex: 1; min-width: 200px; background: #f7f7f7; padding: 15px; border-radius: 8px; border-left: 3px solid #0a66c2; }
-    .card h3 { color: #0a66c2; margin-bottom: 10px; font-size: 1em; }
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
 
-    /* Feed */
-    .feed-section { background: #fff; padding: 15px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .feed-section h3 { color: #000; margin-bottom: 15px; font-size: 1.1em; }
-    .feed-item { padding: 12px 0; border-bottom: 1px solid #eee; }
-    .feed-item:last-child { border-bottom: none; }
-    .feed-item p { font-size: 0.9em; margin-bottom: 8px; color: #666; }
-    .feed-item p strong { color: #000; }
-    .feed-item .meta { font-size: 0.8em; color: #999; margin-top: 5px; }
-    .feed-links { display: flex; gap: 15px; margin-top: 10px; font-size: 0.8em; }
+        /* Profile Card */
+        .profile-card {
+            text-align: center;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid var(--primary);
+        }
+        .profile-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        .profile-title {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
 
-    footer { text-align:center; padding:20px; font-size:0.9em; color:#666; }
-    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 10px; }
-    .footer-links a { color: #666; font-size: 0.8em; }
+        /* List Items */
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        .list-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(10, 102, 194, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        .list-text {
+            flex-grow: 1;
+        }
+        .list-text strong {
+            display: block;
+            margin-bottom: 3px;
+        }
+        .list-text span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
 
-    @media(max-width:1200px){ 
-        .container { flex-direction: column; } 
-        .left, .right, .center { width: 100%; } 
-        .left { position: static; }
-    }
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        /* Responsive */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-sidebar, .main-content, .right-sidebar {
+                width: 100%;
+            }
+            .left-sidebar {
+                position: static;
+            }
+        }
+        @media (max-width: 768px) {
+            .topnav {
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+            .search-bar {
+                order: 3;
+                width: 100%;
+                margin: 10px 0;
+            }
+            .nav-links {
+                display: none; /* Replace with hamburger menu in real project */
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- Top Navigation -->
-<div class="topnav">
-    <div class="logo"><i class="fab fa-linkedin"></i></div>
-    <div class="search"><input type="text" placeholder="Search"></div>
-    <div class="menu">
-        <a href="#"><i class="fas fa-home"></i> Home</a>
-        <a href="#"><i class="fas fa-users"></i> Network</a>
-        <a href="#"><i class="fas fa-briefcase"></i> Jobs</a>
-        <a href="#"><i class="fas fa-comment-dots"></i> Messaging</a>
-        <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+    <!-- Header -->
+    <header class="topnav">
+        <div class="logo">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <nav class="nav-links">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-users"></i> Network</a>
+            <a href="#"><i class="fas fa-briefcase"></i> Jobs</a>
+            <a href="#"><i class="fas fa-comment-dots"></i> Messaging</a>
+            <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+        </nav>
         <div class="profile">
-            <img src="https://via.placeholder.com/24" alt="Profile">
+            <img src="https://via.placeholder.com/30" alt="Profile" class="profile-pic">
             <span>Me <i class="fas fa-caret-down"></i></span>
         </div>
-        <a href="#" class="btn"><i class="fas fa-crown"></i> Try Premium</a>
-    </div>
-</div>
+    </header>
 
-<div class="container">
-
-    <!-- Left Sidebar -->
-    <div class="left">
-        <img src="https://via.placeholder.com/150" alt="Zainab Tehreem">
-        <h2>Zainab Tehreem Justice Wali</h2>
-        <p>Student at Rehan School Online Academy</p>
-        <p>Islamabad, Pakistan</p>
-        
-        <div class="stats">
-            <p><span>24</span> profile viewers</p>
-            <p><span>27</span> post impressions</p>
-        </div>
-        
-        <a href="#" class="nav-item"><i class="fas fa-user"></i> View profile</a>
-        <a href="#" class="nav-item"><i class="fas fa-bookmark"></i> Saved items</a>
-        <a href="#" class="nav-item"><i class="fas fa-users"></i> Groups</a>
-        <a href="#" class="nav-item"><i class="fas fa-newspaper"></i> Newsletters</a>
-        <a href="#" class="nav-item"><i class="fas fa-calendar-alt"></i> Events</a>
-    </div>
-
-    <!-- Center Portfolio -->
-    <div class="center">
-        <section>
-            <h2>About</h2>
-            <p>Hi! I'm <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I'm curious, creative, and passionate about technology, learning, and helping others.</p>
-            <a href="#" class="btn" style="margin-top: 10px;">Show more</a>
-        </section>
-
-        <section>
-            <h2>Personality Traits</h2>
-            <ul>
-                <li>Curious & Intelligent - Always eager to learn new things and expand my knowledge</li>
-                <li>Creative & Imaginative - Love developing stories, apps, and creative content</li>
-                <li>Ambitious & Goal-Oriented - Set clear objectives and work diligently to achieve them</li>
-                <li>Empathetic & Caring - Enjoy helping and motivating others</li>
-                <li>Tech-Savvy & Resourceful - Quick to adapt to new technologies and find solutions</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Strengths</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3><i class="fas fa-bolt"></i> Fast Learner</h3>
-                    <p>Quickly picks up languages, coding, and AI skills. Mastered Python basics in just 2 weeks.</p>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+            <div class="card profile-card">
+                <img src="https://via.placeholder.com/120" alt="Zainab Tehreem" class="profile-img">
+                <h1 class="profile-name">Zainab Tehreem</h1>
+                <p class="profile-title">Student at Rehan School Online Academy</p>
+                <p><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">24</div>
+                        <div class="stat-label">Profile Views</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">27</div>
+                        <div class="stat-label">Post Impressions</div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-lightbulb"></i> Creative Thinker</h3>
-                    <p>Develops stories, apps, and YouTube content. Created 3 original web projects this year.</p>
+                
+                <button class="btn" style="width: 100%; margin-bottom: 10px;">
+                    <i class="fas fa-eye"></i> View Profile
+                </button>
+            </div>
+            
+            <div class="card">
+                <h2>Resources</h2>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-bookmark"></i>
+                    </div>
+                    <div class="list-text">Saved Items</div>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-dumbbell"></i> Persistent</h3>
-                    <p>Works hard and continues even through challenges. Completed 100-day coding challenge.</p>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="list-text">Groups</div>
                 </div>
-                <div class="card">
-                    <h3><i class="fas fa-hands-helping"></i> Helpful</h3>
-                    <p>Loves teaching and inspiring others online. Helped 5 classmates with their coding projects.</p>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="list-text">Newsletters</div>
+                </div>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="list-text">Events</div>
                 </div>
             </div>
-        </section>
+        </aside>
 
-        <section>
-            <h2>Hobbies & Interests</h2>
-            <ul>
-                <li><strong>Languages:</strong> Learning Urdu, English, and Korean</li>
-                <li><strong>Content Creation:</strong> YouTube videos about learning and technology</li>
-                <li><strong>Reading & Writing:</strong> Especially science fiction and personal development</li>
-                <li><strong>Technology:</strong> AI, coding (Python, HTML/CSS), tech exploration</li>
-                <li><strong>Music:</strong> Singing and learning to play instruments</li>
-                <li><strong>Community:</strong> Helping and motivating peers in online learning communities</li>
-            </ul>
-        </section>
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="card">
+                <h2>About</h2>
+                <p>Hi! I'm <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I'm curious, creative, and passionate about technology, learning, and helping others.</p>
+                <button class="btn-outline" style="margin-top: 10px;">
+                    <i class="fas fa-pencil-alt"></i> Edit About
+                </button>
+            </div>
+
+            <div class="card">
+                <h2>Personality Traits</h2>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="list-text">
+                        <strong>Curious & Intelligent</strong>
+                        <span>Always eager to learn new things and expand my knowledge</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="list-text">
+                        <strong>Creative & Imaginative</strong>
+                        <span>Love developing stories, apps, and creative content</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="list-text">
+                        <strong>Ambitious & Goal-Oriented</strong>
+                        <span>Set clear objectives and work diligently to achieve them</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="list-text">
+                        <strong>Empathetic & Caring</strong>
+                        <span>Enjoy helping and motivating others</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Strengths</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                    <div class="card" style="margin: 0;">
+                        <h3><i class="fas fa-bolt"></i> Fast Learner</h3>
+                        <p>Quickly picks up languages, coding, and AI skills.</p>
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <h3><i class="fas fa-lightbulb"></i> Creative Thinker</h3>
+                        <p>Develops stories, apps, and YouTube content.</p>
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <h3><i class="fas fa-dumbbell"></i> Persistent</h3>
+                        <p>Works hard and continues through challenges.</p>
+                    </div>
+                    <div class="card" style="margin: 0;">
+                        <h3><i class="fas fa-hands-helping"></i> Helpful</h3>
+                        <p>Loves teaching and inspiring others online.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="card">
+                <h2>Today's Puzzle Games</h2>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="list-text">
+                        <strong>Zip #155</strong>
+                        <span>Complete the path in this logic puzzle</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-icon">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <div class="list-text">
+                        <strong>Mini Sudoku #8</strong>
+                        <span>The classic game, made mini</span>
+                    </div>
+                </div>
+                <button class="btn-outline" style="width: 100%; margin-top: 10px;">
+                    <i class="fas fa-plus"></i> Show More
+                </button>
+            </div>
+
+            <div class="card">
+                <h2>People You May Know</h2>
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/40" alt="Person" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                    <div class="list-text">
+                        <strong>Shahid Anwar</strong>
+                        <span>Founder of Shilajit Energy Drink</span>
+                    </div>
+                    <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
+                        <i class="fas fa-user-plus"></i> Connect
+                    </button>
+                </div>
+                <div class="list-item">
+                    <img src="https://via.placeholder.com/40" alt="Person" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
+                    <div class="list-text">
+                        <strong>Rehmat EmpowermentWala</strong>
+                        <span>Lead Facilitator at Rehan School</span>
+                    </div>
+                    <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
+                        <i class="fas fa-user-plus"></i> Connect
+                    </button>
+                </div>
+            </div>
+        </aside>
     </div>
-
-    <!-- Right Feed -->
-    <div class="right">
-        <div class="feed-section">
-            <h3>Today's Puzzle Games</h3>
-            <div class="feed-item">
-                <p><strong>Zip #155</strong></p>
-                <p>Complete the path in this logic puzzle</p>
-                <div class="meta">2,345 players today</div>
-                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Play</a>
-            </div>
-            <div class="feed-item">
-                <p><strong>Mini Sudoku #8</strong></p>
-                <p>The classic game, made mini for quick solving</p>
-                <div class="meta">1,892 players today</div>
-                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Play</a>
-            </div>
-            <div class="feed-links">
-                <a href="#">Show more</a>
-                <a href="#">Add to your feed</a>
-            </div>
-        </div>
-
-        <div class="feed-section">
-            <h3>Business Insights</h3>
-            <div class="feed-item">
-                <p><strong>Internet Publishing Trends</strong></p>
-                <p>See how content creation is evolving in 2025</p>
-                <div class="meta">3,456 followers</div>
-                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Follow</a>
-            </div>
-        </div>
-
-        <div class="feed-section">
-            <h3>People You May Know</h3>
-            <div class="feed-item">
-                <p><strong>Shahid Anwar</strong></p>
-                <p>Founder of Shilajit Energy Drink | Entrepreneur</p>
-                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Connect</a>
-            </div>
-            <div class="feed-item">
-                <p><strong>Rehmat EmpowermentWala</strong></p>
-                <p>Lead Facilitator at Rehan School Online Academy</p>
-                <a href="#" class="btn" style="margin-top: 8px; display: inline-block;">Connect</a>
-            </div>
-            <div class="feed-links">
-                <a href="#">View all recommendations</a>
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-links">
-                <a href="#">About</a>
-                <a href="#">Accessibility</a>
-                <a href="#">Help Center</a>
-                <a href="#">Privacy & Terms</a>
-                <a href="#">Ad Choices</a>
-                <a href="#">Advertising</a>
-                <a href="#">Business Services</a>
-                <a href="#">Get the LinkedIn app</a>
-                <a href="#">More</a>
-            </div>
-            <p>LinkedIn Corporation © 2025</p>
-            <p>Zainab Tehreem Justice Wali | Status: online | Messaging</p>
-        </footer>
-    </div>
-</div>
-
 </body>
 </html>
