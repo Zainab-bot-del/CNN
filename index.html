@@ -6,12 +6,21 @@
 <title>Zainab Tehreem Portfolio</title>
 <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #f0f2f5; color: #333; line-height: 1.6; }
+    body { background: #f0f2f5; color: #333; }
+
     a { text-decoration: none; color: #3498db; }
 
-    /* Main layout */
-    .container { display: flex; max-width: 1200px; margin: 30px auto; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .left { width: 300px; background: #6a1b9a; color: #fff; padding: 30px; text-align: center; }
+    /* Top Navigation */
+    .topnav { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 10px 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; flex-wrap: wrap; }
+    .topnav .logo { font-weight: bold; color: #6a1b9a; font-size: 1.2em; }
+    .topnav .search input { padding: 5px 10px; border-radius: 20px; border: 1px solid #ccc; width: 180px; }
+    .topnav .menu { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+    .topnav .menu a { font-weight: 500; color: #333; }
+    .topnav .menu .profile { display: flex; align-items: center; gap:5px; font-weight: 600; }
+
+    /* Layout */
+    .container { display: flex; max-width: 1400px; margin: 20px auto; }
+    .left { width: 280px; background: #6a1b9a; color: #fff; padding: 30px; text-align: center; border-radius:10px; margin-right: 20px; }
     .left img { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #fff; object-fit: cover; }
     .left h2 { margin-bottom: 5px; }
     .left p { margin-bottom: 10px; font-size: 0.9em; }
@@ -19,34 +28,51 @@
     .left .stats p { font-size: 0.9em; margin: 5px 0; }
     .left a { display:block; margin:5px 0; color:#fff; font-weight:bold; }
 
-    .right { flex: 1; padding: 30px; }
+    .center { flex: 2; padding: 0 20px; }
+    .right { width: 320px; padding: 0 20px; }
+
     section { background: #fff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
     section h2 { border-bottom: 2px solid #6a1b9a; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
+
     ul { list-style: square inside; }
+
     .grid { display: flex; flex-wrap: wrap; gap: 20px; }
     .card { flex: 1; min-width: 200px; background: #f7f7f7; padding: 15px; border-radius: 10px; }
     .card h3 { color: #6a1b9a; margin-bottom: 10px; }
 
-    /* Feed styles */
+    /* Feed */
     .feed-section { background: #f7f7f7; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
     .feed-section h3 { color: #6a1b9a; margin-bottom: 10px; }
     .feed-item { background: #fff; padding: 10px; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-    .feed-item p { font-size: 0.9em; }
+    .feed-item p { font-size: 0.9em; margin-bottom:5px; }
+    .feed-item a { font-size:0.9em; color:#6a1b9a; }
 
     footer { text-align:center; padding:20px; font-size:0.9em; color:#555; }
 
-    @media(max-width:900px){
-        .container { flex-direction: column; }
-        .left { width: 100%; text-align: center; }
-        .right { padding: 20px; }
-        .grid { flex-direction: column; }
-    }
+    @media(max-width:1200px){ .container { flex-direction: column; } .left, .right, .center{ width: 100%; margin:10px 0; } }
 </style>
 </head>
 <body>
 
+<!-- Top Navigation -->
+<div class="topnav">
+    <div class="logo">Zainab Tehreem Portfolio</div>
+    <div class="search"><input type="text" placeholder="Search"></div>
+    <div class="menu">
+        <a href="#">Recent</a>
+        <a href="#">Home</a>
+        <a href="#">My Network</a>
+        <a href="#">Jobs</a>
+        <a href="#">Messaging</a>
+        <a href="#">Notifications</a>
+        <div class="profile">Zainab Tehreem Justice Wali</div>
+        <a href="#" style="color:#6a1b9a; font-weight:bold;">Try Premium for PKR0</a>
+    </div>
+</div>
+
 <div class="container">
-    <!-- Left sidebar -->
+
+    <!-- Left Sidebar -->
     <div class="left">
         <img src="https://via.placeholder.com/150" alt="Zainab Tehreem">
         <h2>Zainab Tehreem Justice Wali</h2>
@@ -63,13 +89,11 @@
         <a href="#">Events</a>
     </div>
 
-    <!-- Right content -->
-    <div class="right">
-
-        <!-- Portfolio sections -->
+    <!-- Center Portfolio -->
+    <div class="center">
         <section>
             <h2>About Me</h2>
-            <p>Hi! I’m <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I’m curious, creative, and passionate about technology, learning, and helping others. I aim to inspire, create, and grow while making my family proud.</p>
+            <p>Hi! I’m <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I’m curious, creative, and passionate about technology, learning, and helping others.</p>
         </section>
 
         <section>
@@ -94,69 +118,55 @@
         </section>
 
         <section>
-            <h2>Challenges / Dark Side</h2>
-            <div class="grid">
-                <div class="card"><h3>Perfectionism</h3><p>Wants everything perfect. Tip: Accept "good enough".</p></div>
-                <div class="card"><h3>Overthinking</h3><p>Worries about mistakes or the future. Tip: Focus on the present.</p></div>
-                <div class="card"><h3>Self-Criticism</h3><p>Feels bad if goals aren’t met. Tip: Celebrate small wins.</p></div>
-                <div class="card"><h3>Impatience</h3><p>Gets frustrated with slow progress. Tip: Break tasks into smaller steps.</p></div>
-                <div class="card"><h3>People-Pleasing</h3><p>Focuses too much on others. Tip: Learn to say "no".</p></div>
-            </div>
-        </section>
-
-        <section>
             <h2>Hobbies & Interests</h2>
             <ul>
                 <li>Learning languages (Urdu, English, Korean)</li>
-                <li>YouTube & content creation (quizzes, faceless videos, animations)</li>
-                <li>Reading, writing, and storytelling</li>
-                <li>AI, coding, and tech exploration</li>
+                <li>YouTube & content creation</li>
+                <li>Reading, writing, storytelling</li>
+                <li>AI, coding, tech exploration</li>
                 <li>Music & singing</li>
                 <li>Helping and motivating others</li>
             </ul>
         </section>
-
-        <section>
-            <h2>Dreams & Goals</h2>
-            <ul>
-                <li>Become successful and skilled in tech and content creation</li>
-                <li>Make parents proud and help others in learning</li>
-                <li>Grow YouTube channels to reach millions of viewers</li>
-                <li>Continuously explore and learn new skills</li>
-            </ul>
-        </section>
-
-        <!-- Feed / LinkedIn-style section -->
-        <section>
-            <h2>Today's Feed</h2>
-
-            <div class="feed-section">
-                <h3>Today’s Puzzle Games</h3>
-                <div class="feed-item"><p>Zip #155 – Complete the path</p></div>
-                <div class="feed-item"><p>Mini Sudoku #8 – The classic game, made mini</p></div>
-                <div class="feed-item"><p>Tango #316 – Harmonize the grid</p></div>
-                <a href="#">Show more</a> | <a href="#">Add to your feed</a>
-            </div>
-
-            <div class="feed-section">
-                <h3>Business Insights</h3>
-                <div class="feed-item"><p>Company • Internet Publishing</p></div>
-            </div>
-
-            <div class="feed-section">
-                <h3>People You May Follow</h3>
-                <div class="feed-item"><p><strong>Shahid Anwar</strong><br>Founder of Shilajit Energy Drink | Owner at Shahid Anwar LLC | Owner of MKP Homes | Owner of One Percent Inc | Shahid University Inc</p><a href="#">Follow</a></div>
-                <div class="feed-item"><p><strong>Rehmat EmpowermentWala</strong><br>Lead Facilitator at Rehan School Online Academy | Former Head of Interview & Podcast Dept – Rehan School | Podcaster at Empowering Minds | Communication & Youth Empowerment Advocate</p><a href="#">Follow</a></div>
-                <a href="#">View all recommendations</a>
-            </div>
-        </section>
-
     </div>
-</div>
 
-<footer>
-    LinkedIn-style Portfolio © 2025 Zainab Tehreem Justice Wali | Status: Online | Messaging
-</footer>
+    <!-- Right Feed -->
+    <div class="right">
+        <div class="feed-section">
+            <h3>Today’s Puzzle Games</h3>
+            <div class="feed-item"><p>Zip #155 – Complete the path</p></div>
+            <div class="feed-item"><p>Mini Sudoku #8 – The classic game, made mini</p></div>
+            <div class="feed-item"><p>Tango #316 – Harmonize the grid</p></div>
+            <a href="#">Show more</a> | <a href="#">Add to your feed</a>
+        </div>
+
+        <div class="feed-section">
+            <h3>Business Insights</h3>
+            <div class="feed-item"><p>Company • Internet Publishing</p></div>
+        </div>
+
+        <div class="feed-section">
+            <h3>People You May Follow</h3>
+            <div class="feed-item"><p><strong>Shahid Anwar</strong><br>Founder of Shilajit Energy Drink | Owner at Shahid Anwar LLC | Owner Of MKP Homes | Owner Of One Percent Inc | Shahid University Inc</p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Rehmat EmpowermentWala</strong><br>Lead Facilitator at Rehan School Online Academy | Former Head of Interview & Podcast Dept – Rehan School | Podcaster at Empowering Minds</p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Usman Leadershipwala</strong></p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Rehan Naeem</strong></p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Masroor CanvaWala</strong></p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Ali Ahsan Creative wala</strong></p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Mahrose Technologywali</strong></p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Christine Hiebel</strong></p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Jonathan Mast</strong></p><a href="#">Follow</a></div>
+            <div class="feed-item"><p><strong>Joanna Chołuj</strong></p><a href="#">Follow</a></div>
+            <a href="#">View all recommendations</a>
+        </div>
+
+        <div class="feed-section">
+            <p>About | Accessibility | Help Center | Privacy & Terms | Ad Choices | Advertising | Business Services | Get the LinkedIn app | More</p>
+            <p>LinkedIn Corporation © 2025 | Zainab Tehreem Justice Wali | Status: online | Messaging</p>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
