@@ -17,6 +17,7 @@
     .left p { margin-bottom: 10px; font-size: 0.9em; }
     .left .stats { background: rgba(255,255,255,0.1); padding: 10px; margin: 10px 0; border-radius: 5px; }
     .left .stats p { font-size: 0.9em; margin: 5px 0; }
+    .left a { display:block; margin:5px 0; color:#fff; font-weight:bold; }
 
     .right { flex: 1; padding: 30px; }
     section { background: #fff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
@@ -25,6 +26,12 @@
     .grid { display: flex; flex-wrap: wrap; gap: 20px; }
     .card { flex: 1; min-width: 200px; background: #f7f7f7; padding: 15px; border-radius: 10px; }
     .card h3 { color: #6a1b9a; margin-bottom: 10px; }
+
+    /* Feed styles */
+    .feed-section { background: #f7f7f7; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
+    .feed-section h3 { color: #6a1b9a; margin-bottom: 10px; }
+    .feed-item { background: #fff; padding: 10px; border-radius: 8px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .feed-item p { font-size: 0.9em; }
 
     footer { text-align:center; padding:20px; font-size:0.9em; color:#555; }
 
@@ -49,15 +56,17 @@
             <p>Profile viewers: 24</p>
             <p>Post impressions: 27</p>
         </div>
-        <p><a href="#" style="color:#fff; font-weight:bold;">Unlock Premium tools & insights</a></p>
-        <p><a href="#" style="color:#fff; font-weight:bold;">Saved items</a></p>
-        <p><a href="#" style="color:#fff; font-weight:bold;">Groups</a></p>
-        <p><a href="#" style="color:#fff; font-weight:bold;">Newsletters</a></p>
-        <p><a href="#" style="color:#fff; font-weight:bold;">Events</a></p>
+        <a href="#">Unlock Premium tools & insights</a>
+        <a href="#">Saved items</a>
+        <a href="#">Groups</a>
+        <a href="#">Newsletters</a>
+        <a href="#">Events</a>
     </div>
 
     <!-- Right content -->
     <div class="right">
+
+        <!-- Portfolio sections -->
         <section>
             <h2>About Me</h2>
             <p>Hi! I’m <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I’m curious, creative, and passionate about technology, learning, and helping others. I aim to inspire, create, and grow while making my family proud.</p>
@@ -85,7 +94,7 @@
         </section>
 
         <section>
-            <h2>Dark Side / Challenges</h2>
+            <h2>Challenges / Dark Side</h2>
             <div class="grid">
                 <div class="card"><h3>Perfectionism</h3><p>Wants everything perfect. Tip: Accept "good enough".</p></div>
                 <div class="card"><h3>Overthinking</h3><p>Worries about mistakes or the future. Tip: Focus on the present.</p></div>
@@ -116,11 +125,37 @@
                 <li>Continuously explore and learn new skills</li>
             </ul>
         </section>
+
+        <!-- Feed / LinkedIn-style section -->
+        <section>
+            <h2>Today's Feed</h2>
+
+            <div class="feed-section">
+                <h3>Today’s Puzzle Games</h3>
+                <div class="feed-item"><p>Zip #155 – Complete the path</p></div>
+                <div class="feed-item"><p>Mini Sudoku #8 – The classic game, made mini</p></div>
+                <div class="feed-item"><p>Tango #316 – Harmonize the grid</p></div>
+                <a href="#">Show more</a> | <a href="#">Add to your feed</a>
+            </div>
+
+            <div class="feed-section">
+                <h3>Business Insights</h3>
+                <div class="feed-item"><p>Company • Internet Publishing</p></div>
+            </div>
+
+            <div class="feed-section">
+                <h3>People You May Follow</h3>
+                <div class="feed-item"><p><strong>Shahid Anwar</strong><br>Founder of Shilajit Energy Drink | Owner at Shahid Anwar LLC | Owner of MKP Homes | Owner of One Percent Inc | Shahid University Inc</p><a href="#">Follow</a></div>
+                <div class="feed-item"><p><strong>Rehmat EmpowermentWala</strong><br>Lead Facilitator at Rehan School Online Academy | Former Head of Interview & Podcast Dept – Rehan School | Podcaster at Empowering Minds | Communication & Youth Empowerment Advocate</p><a href="#">Follow</a></div>
+                <a href="#">View all recommendations</a>
+            </div>
+        </section>
+
     </div>
 </div>
 
 <footer>
-    &copy; 2025 Zainab Tehreem | Designed with ❤️
+    LinkedIn-style Portfolio © 2025 Zainab Tehreem Justice Wali | Status: Online | Messaging
 </footer>
 
 </body>
