@@ -3,134 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zainab Tehreem Portfolio</title>
+    <title>My Beautiful Website</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        body { line-height: 1.6; background: #e0f0ff; color: #333; }
-
-        a { text-decoration: none; color: #3498db; }
-
-        /* Header */
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
         header {
-            background: rgba(30,144,255,0.9);
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
             padding: 1rem 0;
-            position: fixed;
-            width: 100%;
+            position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 100;
         }
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.8rem; font-weight: bold; }
-        .nav-links { display: flex; list-style: none; }
-        .nav-links li { margin-left: 2rem; }
-        .nav-links a { color: white; font-weight: bold; transition: color 0.3s; }
-        .nav-links a:hover { color: #ffeb3b; text-shadow: 1px 1px 3px #000; }
-
-        /* Hero */
-        .hero {
-            height: 100vh;
-            display: flex; align-items: center; justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                        url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
-            color: white; text-align: center; padding-top: 60px;
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
         }
-        .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 8px #000; }
-        .hero-content p { font-size: 1.3rem; max-width: 600px; margin: 0 auto 2rem; }
-
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #6e8efb;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #6e8efb;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature h3 {
+            color: #a777e3;
+            margin-bottom: 1rem;
+        }
+        
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, #a777e3, #6e8efb);
+            color: white;
+            padding: 3rem 2rem;
+        }
+        
+        .cta h2 {
+            color: white;
+            border-bottom: none;
+        }
+        
         .btn {
-            display: inline-block; background: #3498db; color: white; padding: 0.8rem 1.5rem;
-            border-radius: 5px; cursor: pointer; transition: background 0.3s, transform 0.3s;
+            display: inline-block;
+            background: white;
+            color: #6e8efb;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s;
         }
-        .btn:hover { background: #1e90ff; transform: scale(1.05); }
-
-        /* Sections */
-        .section { padding: 5rem 0; }
-        .section-title { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; color: #1e90ff; text-shadow: 1px 1px 2px #aaa; }
-
-        .about-content { display: flex; align-items: center; flex-wrap: wrap; gap: 2rem; }
-        .about-img, .about-text { flex: 1; min-width: 300px; }
-        .about-img img { width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-        .about-text h3 { margin-bottom: 1rem; color: #1e90ff; text-shadow: 1px 1px 2px #aaa; }
-
-        /* Skills */
-        .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-        .skill {
-            background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2); text-align: center; flex: 1 1 200px;
-            transition: transform 0.3s, box-shadow 0.3s;
+        
+        .btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.05);
         }
-        .skill:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.3); }
-        .skill i { font-size: 3rem; color: #1e90ff; margin-bottom: 1rem; }
-
-        /* Projects */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-        .project-card { background: rgba(255,255,255,0.95); border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.3); }
-        .project-img img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; }
-        .project-card:hover .project-img img { transform: scale(1.1); }
-        .project-info { padding: 1.5rem; }
-        .project-info h3 { margin-bottom: 0.5rem; color: #1e90ff; text-shadow: 1px 1px 2px #aaa; }
-
-        /* Contact */
-        .contact-form { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.95); padding: 2rem; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1e90ff; }
-        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
-        .form-group textarea { height: 150px; }
-
+        
         /* Footer */
-        footer { background: rgba(30,144,255,0.9); color: white; text-align: center; padding: 2rem 0; box-shadow: 0 -4px 15px rgba(0,0,0,0.2); }
-        .social-links { display: flex; justify-content: center; list-style: none; margin: 1rem 0; }
-        .social-links li { margin: 0 1rem; }
-        .social-links a { color: white; font-size: 1.5rem; transition: color 0.3s; }
-        .social-links a:hover { color: #ffeb3b; }
-
-        /* Responsive */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #6e8efb;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .about-content { flex-direction: column; }
-            .hero-content h1 { font-size: 2rem; }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Zainab Tehreem</div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">MyWebsite</div>
+        <div class="tagline">A simple, beautiful website design</div>
     </header>
-
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm Zainab Tehreem</h1>
-                <p>A passionate student creating beautiful and functional projects at Rehan School Online Academy.</p>
-                <a href="#projects" class="btn">View My Work</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-img">
-                    <img src="https://via.placeholder.com/400x400" alt="Profile Image">
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="home">
+            <h2>Welcome to Our Website</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+            <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+        </section>
+        
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a creative team dedicated to building amazing websites and digital experiences. Our mission is to help businesses grow through innovative web solutions.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Our Vision</h3>
+                    <p>To be the leading web design agency recognized for creativity, quality, and customer satisfaction.</p>
                 </div>
-                <div class="about-text">
-                    <h3>Who am I?</h3>
-                    <p>I'm Zainab Tehreem, a student learning coding and creating
+                <div class="feature">
+                    <h3>Our Mission</h3>
+                    <p>To deliver exceptional digital solutions that help our clients achieve their business goals.</p>
+                </div>
+                <div class="feature">
+                    <h3>Our Values</h3>
+                    <p>Integrity, innovation, excellence, and customer focus guide everything we do.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>We offer a comprehensive range of web services to meet all your digital needs.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Web Design</h3>
+                    <p>Beautiful, responsive websites tailored to your brand and audience.</p>
+                </div>
+                <div class="feature">
+                    <h3>Web Development</h3>
+                    <p>Robust web applications with clean, efficient code.</p>
+                </div>
+                <div class="feature">
+                    <h3>SEO Optimization</h3>
+                    <p>Improve your search rankings and online visibility.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today to discuss your project and how we can help bring your vision to life.</p>
+            <a href="#contact" class="btn">Contact Us</a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="social-links">
+            <a href="#">📱</a>
+            <a href="#">📘</a>
+            <a href="#">🐦</a>
+            <a href="#">📸</a>
+            <a href="#">💼</a>
+        </div>
+        <p>&copy; 2023 MyWebsite. All rights reserved.</p>
+    </footer>
+</body>
+</html>
