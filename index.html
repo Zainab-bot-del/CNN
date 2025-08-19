@@ -3,484 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zainab Tehreem | LinkedIn Portfolio</title>
+    <title>Zainab Tehreem | Creative Technologist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0a66c2;
-            --primary-dark: #004182;
-            --text: #333;
-            --text-light: #666;
-            --border: #e0e0e0;
-            --card-bg: #fff;
-            --body-bg: #f5f5f5;
+            --primary: #6a1b9a; /* Purple theme */
+            --secondary: #ff9e80; /* Accent */
+            --dark: #2e2e2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
         }
-
-        /* Dark Mode (Uncomment to enable) */
-        /*
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text: #f0f0f0;
-                --text-light: #ccc;
-                --border: #444;
-                --card-bg: #222;
-                --body-bg: #121212;
-            }
-        }
-        */
-
-        * {
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
-        body {
-            background: var(--body-bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Buttons & Links */
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-        .btn {
-            display: inline-block;
-            padding: 8px 16px;
-            background: var(--primary);
-            color: white;
-            border-radius: 16px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            text-decoration: none;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-        }
-        .btn-outline:hover {
-            background: rgba(10, 102, 194, 0.1);
-        }
-
-        /* Header */
-        .topnav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--card-bg);
-            padding: 10px 5%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        .logo i {
-            margin-right: 8px;
-        }
-        .search-bar {
-            flex-grow: 1;
-            margin: 0 20px;
-        }
-        .search-bar input {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px 15px;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            background: rgba(0, 0, 0, 0.05);
-        }
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-        .nav-links a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-        .nav-links a i {
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding-left: 15px;
-            border-left: 1px solid var(--border);
-        }
-        .profile-pic {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* Main Layout */
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: 20px auto;
-            gap: 20px;
-            padding: 0 5%;
-        }
-        .left-sidebar {
-            width: 25%;
-            position: sticky;
-            top: 80px;
-            align-self: flex-start;
-        }
-        .main-content {
-            width: 50%;
-        }
-        .right-sidebar {
-            width: 25%;
-        }
-
-        /* Cards */
+        
+        /* Modern Card Design */
         .card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        .card h2 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* Profile Card */
-        .profile-card {
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), #8e44ad);
+            color: white;
+            padding: 3rem 0;
             text-align: center;
         }
-        .profile-img {
-            width: 120px;
-            height: 120px;
+        .profile-pic {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 15px;
-            border: 3px solid var(--primary);
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
-        .profile-name {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
+        
+        /* Sections */
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
         }
-        .profile-title {
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-        .stats {
+        
+        /* Personality Traits */
+        .trait {
             display: flex;
-            justify-content: space-around;
-            margin: 15px 0;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
         }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-weight: bold;
-            color: var(--primary);
-        }
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-light);
-        }
-
-        /* List Items */
-        .list-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .list-item:last-child {
-            border-bottom: none;
-        }
-        .list-icon {
+        .trait-icon {
+            background: var(--primary);
+            color: white;
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: rgba(10, 102, 194, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        /* Dark Side Cards */
+        .dark-side {
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .dark-side h4 {
             color: var(--primary);
+            margin-bottom: 0.5rem;
         }
-        .list-text {
-            flex-grow: 1;
-        }
-        .list-text strong {
-            display: block;
-            margin-bottom: 3px;
-        }
-        .list-text span {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
+        
         /* Responsive */
-        @media (max-width: 992px) {
-            .container {
-                flex-direction: column;
-            }
-            .left-sidebar, .main-content, .right-sidebar {
-                width: 100%;
-            }
-            .left-sidebar {
-                position: static;
-            }
-        }
         @media (max-width: 768px) {
-            .topnav {
-                flex-wrap: wrap;
-                padding: 10px;
-            }
-            .search-bar {
-                order: 3;
-                width: 100%;
-                margin: 10px 0;
-            }
-            .nav-links {
-                display: none; /* Replace with hamburger menu in real project */
+            section {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="topnav">
-        <div class="logo">
-            <i class="fab fa-linkedin"></i> LinkedIn
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search">
-        </div>
-        <nav class="nav-links">
-            <a href="#"><i class="fas fa-home"></i> Home</a>
-            <a href="#"><i class="fas fa-users"></i> Network</a>
-            <a href="#"><i class="fas fa-briefcase"></i> Jobs</a>
-            <a href="#"><i class="fas fa-comment-dots"></i> Messaging</a>
-            <a href="#"><i class="fas fa-bell"></i> Notifications</a>
-        </nav>
-        <div class="profile">
-            <img src="https://via.placeholder.com/30" alt="Profile" class="profile-pic">
-            <span>Me <i class="fas fa-caret-down"></i></span>
-        </div>
+    <!-- Hero Header -->
+    <header>
+        <img src="https://via.placeholder.com/150" alt="Zainab Tehreem" class="profile-pic">
+        <h1>Zainab Tehreem "Humanity Wali"</h1>
+        <p>Creative Technologist | Content Creator | Young Innovator</p>
+        <p><i class="fas fa-map-marker-alt"></i> Pakistan | Born: April 30, 2012</p>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Left Sidebar -->
-        <aside class="left-sidebar">
-            <div class="card profile-card">
-                <img src="https://via.placeholder.com/120" alt="Zainab Tehreem" class="profile-img">
-                <h1 class="profile-name">Zainab Tehreem</h1>
-                <p class="profile-title">Student at Rehan School Online Academy</p>
-                <p><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+    <main>
+        <!-- About Section -->
+        <section>
+            <div class="card">
+                <h2><i class="fas fa-user-graduate"></i> About Me</h2>
+                <p>13-year-old Level 1 student at Rehan School Online Academy with a passion for technology, creativity, and helping others. I combine technical skills with artistic expression to create meaningful content and solutions.</p>
                 
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number">24</div>
-                        <div class="stat-label">Profile Views</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">27</div>
-                        <div class="stat-label">Post Impressions</div>
-                    </div>
-                </div>
-                
-                <button class="btn" style="width: 100%; margin-bottom: 10px;">
-                    <i class="fas fa-eye"></i> View Profile
-                </button>
-            </div>
-            
-            <div class="card">
-                <h2>Resources</h2>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-bookmark"></i>
-                    </div>
-                    <div class="list-text">Saved Items</div>
-                </div>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="list-text">Groups</div>
-                </div>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-newspaper"></i>
-                    </div>
-                    <div class="list-text">Newsletters</div>
-                </div>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <div class="list-text">Events</div>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="card">
-                <h2>About</h2>
-                <p>Hi! I'm <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I'm curious, creative, and passionate about technology, learning, and helping others.</p>
-                <button class="btn-outline" style="margin-top: 10px;">
-                    <i class="fas fa-pencil-alt"></i> Edit About
-                </button>
-            </div>
-
-            <div class="card">
-                <h2>Personality Traits</h2>
-                <div class="list-item">
-                    <div class="list-icon">
+                <div class="trait">
+                    <div class="trait-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <div class="list-text">
-                        <strong>Curious & Intelligent</strong>
-                        <span>Always eager to learn new things and expand my knowledge</span>
+                    <div>
+                        <h3>Curious & Intelligent</h3>
+                        <p>Constantly learning languages (Urdu, English, Korean), coding, and AI technologies. Self-taught in many digital skills through online resources.</p>
                     </div>
                 </div>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-lightbulb"></i>
+                
+                <div class="trait">
+                    <div class="trait-icon">
+                        <i class="fas fa-paint-brush"></i>
                     </div>
-                    <div class="list-text">
-                        <strong>Creative & Imaginative</strong>
-                        <span>Love developing stories, apps, and creative content</span>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <div class="list-text">
-                        <strong>Ambitious & Goal-Oriented</strong>
-                        <span>Set clear objectives and work diligently to achieve them</span>
-                    </div>
-                </div>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div class="list-text">
-                        <strong>Empathetic & Caring</strong>
-                        <span>Enjoy helping and motivating others</span>
+                    <div>
+                        <h3>Creative & Imaginative</h3>
+                        <p>Develop stories, apps, YouTube content (faceless videos, quizzes, animations), and even coloring books. Approach problems with innovative solutions.</p>
                     </div>
                 </div>
             </div>
+        </section>
 
+        <!-- Strengths Section -->
+        <section>
             <div class="card">
-                <h2>Strengths</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
-                    <div class="card" style="margin: 0;">
-                        <h3><i class="fas fa-bolt"></i> Fast Learner</h3>
-                        <p>Quickly picks up languages, coding, and AI skills.</p>
+                <h2><i class="fas fa-star"></i> Core Strengths</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h3><i class="fas fa-bolt" style="color: var(--primary);"></i> Fast Learner</h3>
+                        <p>Quickly masters new languages, coding concepts (Python, HTML/CSS), and AI tools through focused practice.</p>
                     </div>
-                    <div class="card" style="margin: 0;">
-                        <h3><i class="fas fa-lightbulb"></i> Creative Thinker</h3>
-                        <p>Develops stories, apps, and YouTube content.</p>
+                    <div>
+                        <h3><i class="fas fa-lightbulb" style="color: var(--primary);"></i> Creative Problem Solver</h3>
+                        <p>Develops unique content formats and technical solutions by combining different skill sets.</p>
                     </div>
-                    <div class="card" style="margin: 0;">
-                        <h3><i class="fas fa-dumbbell"></i> Persistent</h3>
-                        <p>Works hard and continues through challenges.</p>
-                    </div>
-                    <div class="card" style="margin: 0;">
-                        <h3><i class="fas fa-hands-helping"></i> Helpful</h3>
-                        <p>Loves teaching and inspiring others online.</p>
+                    <div>
+                        <h3><i class="fas fa-hands-helping" style="color: var(--primary);"></i> Empathetic Helper</h3>
+                        <p>Creates content specifically designed to educate and inspire peers in my community.</p>
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
 
-        <!-- Right Sidebar -->
-        <aside class="right-sidebar">
+        <!-- Growth Areas -->
+        <section>
             <div class="card">
-                <h2>Today's Puzzle Games</h2>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <div class="list-text">
-                        <strong>Zip #155</strong>
-                        <span>Complete the path in this logic puzzle</span>
-                    </div>
+                <h2><i class="fas fa-seedling"></i> Growth Journey</h2>
+                
+                <div class="dark-side">
+                    <h4>Perfectionism</h4>
+                    <p><strong>Manifests as:</strong> Wanting everything to be flawless before sharing</p>
+                    <p><strong>Improvement strategy:</strong> Practicing "good enough" mentality for initial versions</p>
                 </div>
-                <div class="list-item">
-                    <div class="list-icon">
-                        <i class="fas fa-th"></i>
-                    </div>
-                    <div class="list-text">
-                        <strong>Mini Sudoku #8</strong>
-                        <span>The classic game, made mini</span>
-                    </div>
+                
+                <div class="dark-side">
+                    <h4>Overthinking</h4>
+                    <p><strong>Manifests as:</strong> Worrying about potential mistakes or future outcomes</p>
+                    <p><strong>Improvement strategy:</strong> Mindfulness techniques and breaking projects into smaller steps</p>
                 </div>
-                <button class="btn-outline" style="width: 100%; margin-top: 10px;">
-                    <i class="fas fa-plus"></i> Show More
-                </button>
             </div>
+        </section>
 
+        <!-- Goals Section -->
+        <section>
             <div class="card">
-                <h2>People You May Know</h2>
-                <div class="list-item">
-                    <img src="https://via.placeholder.com/40" alt="Person" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-                    <div class="list-text">
-                        <strong>Shahid Anwar</strong>
-                        <span>Founder of Shilajit Energy Drink</span>
-                    </div>
-                    <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
-                        <i class="fas fa-user-plus"></i> Connect
-                    </button>
-                </div>
-                <div class="list-item">
-                    <img src="https://via.placeholder.com/40" alt="Person" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;">
-                    <div class="list-text">
-                        <strong>Rehmat EmpowermentWala</strong>
-                        <span>Lead Facilitator at Rehan School</span>
-                    </div>
-                    <button class="btn" style="padding: 5px 10px; font-size: 0.8rem;">
-                        <i class="fas fa-user-plus"></i> Connect
-                    </button>
-                </div>
+                <h2><i class="fas fa-bullseye"></i> Dreams & Goals</h2>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                        <i class="fas fa-rocket" style="position: absolute; left: 0; color: var(--primary);"></i>
+                        Build successful YouTube channels reaching millions with educational content
+                    </li>
+                    <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                        <i class="fas fa-laptop-code" style="position: absolute; left: 0; color: var(--primary);"></i>
+                        Master technical skills in coding and AI to create innovative projects
+                    </li>
+                    <li style="margin-bottom: 1rem; padding-left: 1.5rem; position: relative;">
+                        <i class="fas fa-hands-helping" style="position: absolute; left: 0; color: var(--primary);"></i>
+                        Help others learn through accessible tutorials and motivational content
+                    </li>
+                </ul>
             </div>
-        </aside>
-    </div>
+        </section>
+    </main>
+
+    <footer style="background: var(--dark); color: white; text-align: center; padding: 2rem;">
+        <h3>Let's Connect!</h3>
+        <div style="margin: 1rem 0; font-size: 1.5rem;">
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-youtube"></i></a>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-github"></i></a>
+            <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>© 2024 Zainab Tehreem | Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i></p>
+    </footer>
 </body>
 </html>
