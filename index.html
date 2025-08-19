@@ -5,138 +5,118 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zainab Tehreem Portfolio</title>
 <style>
-    /* Reset and basic styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    body { background: #f9f9f9; color: #333; line-height: 1.6; }
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: #f0f2f5; color: #333; line-height: 1.6; }
     a { text-decoration: none; color: #3498db; }
-    h1, h2, h3 { color: #222; margin-bottom: 10px; }
-    p { margin-bottom: 15px; }
 
-    /* Container */
-    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    /* Main layout */
+    .container { display: flex; max-width: 1200px; margin: 30px auto; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .left { width: 300px; background: #6a1b9a; color: #fff; padding: 30px; text-align: center; }
+    .left img { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px; border: 3px solid #fff; object-fit: cover; }
+    .left h2 { margin-bottom: 5px; }
+    .left p { margin-bottom: 10px; font-size: 0.9em; }
+    .left .stats { background: rgba(255,255,255,0.1); padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .left .stats p { font-size: 0.9em; margin: 5px 0; }
 
-    /* Header */
-    header { background: #6a1b9a; color: #fff; padding: 30px 20px; text-align: center; border-radius: 10px; }
-    header h1 { font-size: 2.5em; margin-bottom: 10px; }
-    header p { font-size: 1.2em; }
-
-    /* Section styling */
-    section { background: #fff; margin: 20px 0; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .right { flex: 1; padding: 30px; }
+    section { background: #fff; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
     section h2 { border-bottom: 2px solid #6a1b9a; display: inline-block; padding-bottom: 5px; margin-bottom: 15px; }
-
-    /* Grid for strengths and dark sides */
+    ul { list-style: square inside; }
     .grid { display: flex; flex-wrap: wrap; gap: 20px; }
-    .card { flex: 1; min-width: 250px; background: #f1f1f1; padding: 15px; border-radius: 10px; }
+    .card { flex: 1; min-width: 200px; background: #f7f7f7; padding: 15px; border-radius: 10px; }
     .card h3 { color: #6a1b9a; margin-bottom: 10px; }
 
-    /* Lists */
-    ul { list-style: square inside; }
+    footer { text-align:center; padding:20px; font-size:0.9em; color:#555; }
 
-    /* Footer */
-    footer { text-align: center; padding: 20px; margin-top: 20px; color: #555; font-size: 0.9em; }
-
-    /* Responsive */
-    @media(max-width:700px) {
+    @media(max-width:900px){
+        .container { flex-direction: column; }
+        .left { width: 100%; text-align: center; }
+        .right { padding: 20px; }
         .grid { flex-direction: column; }
     }
 </style>
 </head>
 <body>
 
-<header>
-    <h1>Zainab Tehreem</h1>
-    <p>"Humanity Wali" | Aspiring Creator & Tech Enthusiast</p>
-</header>
-
 <div class="container">
-
-    <section>
-        <h2>About Me</h2>
-        <p>Hi! I’m <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I’m curious, creative, and passionate about technology, learning, and helping others. I aim to inspire, create, and grow while making my family proud.</p>
-    </section>
-
-    <section>
-        <h2>Personality</h2>
-        <p>I am a bright, ambitious, and creative individual. I balance curiosity, empathy, and tech skills while constantly learning new things. Some key traits include:</p>
-        <ul>
-            <li>Curious & Intelligent</li>
-            <li>Creative & Imaginative</li>
-            <li>Ambitious & Goal-Oriented</li>
-            <li>Empathetic & Caring</li>
-            <li>Tech-Savvy & Resourceful</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Strengths</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Fast Learner</h3>
-                <p>Quickly picks up languages, coding, and AI skills.</p>
-            </div>
-            <div class="card">
-                <h3>Creative Thinker</h3>
-                <p>Develops stories, apps, and YouTube content.</p>
-            </div>
-            <div class="card">
-                <h3>Persistent</h3>
-                <p>Works hard and continues even through challenges.</p>
-            </div>
-            <div class="card">
-                <h3>Helpful</h3>
-                <p>Loves teaching and inspiring others online.</p>
-            </div>
+    <!-- Left sidebar -->
+    <div class="left">
+        <img src="https://via.placeholder.com/150" alt="Zainab Tehreem">
+        <h2>Zainab Tehreem Justice Wali</h2>
+        <p>13-years-old | Level 1 student at Rehan School Online Academy</p>
+        <p>Islamabad, Islāmābād</p>
+        <div class="stats">
+            <p>Profile viewers: 24</p>
+            <p>Post impressions: 27</p>
         </div>
-    </section>
+        <p><a href="#" style="color:#fff; font-weight:bold;">Unlock Premium tools & insights</a></p>
+        <p><a href="#" style="color:#fff; font-weight:bold;">Saved items</a></p>
+        <p><a href="#" style="color:#fff; font-weight:bold;">Groups</a></p>
+        <p><a href="#" style="color:#fff; font-weight:bold;">Newsletters</a></p>
+        <p><a href="#" style="color:#fff; font-weight:bold;">Events</a></p>
+    </div>
 
-    <section>
-        <h2>Challenges / Dark Side</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Perfectionism</h3>
-                <p>Sometimes wants everything perfect. Tip: Accept "good enough".</p>
-            </div>
-            <div class="card">
-                <h3>Overthinking</h3>
-                <p>Worries about mistakes or the future. Tip: Focus on the present.</p>
-            </div>
-            <div class="card">
-                <h3>Self-Criticism</h3>
-                <p>Feels bad if goals aren’t met. Tip: Celebrate small wins.</p>
-            </div>
-            <div class="card">
-                <h3>Impatience</h3>
-                <p>Gets frustrated with slow progress. Tip: Break tasks into steps.</p>
-            </div>
-            <div class="card">
-                <h3>People-Pleasing</h3>
-                <p>Focuses too much on others. Tip: Learn to say "no".</p>
-            </div>
-        </div>
-    </section>
+    <!-- Right content -->
+    <div class="right">
+        <section>
+            <h2>About Me</h2>
+            <p>Hi! I’m <strong>Zainab Tehreem</strong>, a 13-year-old student from Pakistan. I’m curious, creative, and passionate about technology, learning, and helping others. I aim to inspire, create, and grow while making my family proud.</p>
+        </section>
 
-    <section>
-        <h2>Hobbies & Interests</h2>
-        <ul>
-            <li>Learning languages (Urdu, English, Korean)</li>
-            <li>YouTube & content creation (quizzes, faceless videos, animations)</li>
-            <li>Reading, writing, and storytelling</li>
-            <li>AI, coding, and tech exploration</li>
-            <li>Music & singing</li>
-            <li>Helping and motivating others</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Personality Traits</h2>
+            <ul>
+                <li>Curious & Intelligent</li>
+                <li>Creative & Imaginative</li>
+                <li>Ambitious & Goal-Oriented</li>
+                <li>Empathetic & Caring</li>
+                <li>Tech-Savvy & Resourceful</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Dreams & Goals</h2>
-        <ul>
-            <li>Become successful and skilled in tech and content creation</li>
-            <li>Make parents proud and help others in learning</li>
-            <li>Grow YouTube channels to reach millions of viewers</li>
-            <li>Continuously explore and learn new skills</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Strengths</h2>
+            <div class="grid">
+                <div class="card"><h3>Fast Learner</h3><p>Quickly picks up languages, coding, and AI skills.</p></div>
+                <div class="card"><h3>Creative Thinker</h3><p>Develops stories, apps, and YouTube content.</p></div>
+                <div class="card"><h3>Persistent</h3><p>Works hard and continues even through challenges.</p></div>
+                <div class="card"><h3>Helpful</h3><p>Loves teaching and inspiring others online.</p></div>
+            </div>
+        </section>
 
+        <section>
+            <h2>Dark Side / Challenges</h2>
+            <div class="grid">
+                <div class="card"><h3>Perfectionism</h3><p>Wants everything perfect. Tip: Accept "good enough".</p></div>
+                <div class="card"><h3>Overthinking</h3><p>Worries about mistakes or the future. Tip: Focus on the present.</p></div>
+                <div class="card"><h3>Self-Criticism</h3><p>Feels bad if goals aren’t met. Tip: Celebrate small wins.</p></div>
+                <div class="card"><h3>Impatience</h3><p>Gets frustrated with slow progress. Tip: Break tasks into smaller steps.</p></div>
+                <div class="card"><h3>People-Pleasing</h3><p>Focuses too much on others. Tip: Learn to say "no".</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Hobbies & Interests</h2>
+            <ul>
+                <li>Learning languages (Urdu, English, Korean)</li>
+                <li>YouTube & content creation (quizzes, faceless videos, animations)</li>
+                <li>Reading, writing, and storytelling</li>
+                <li>AI, coding, and tech exploration</li>
+                <li>Music & singing</li>
+                <li>Helping and motivating others</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Dreams & Goals</h2>
+            <ul>
+                <li>Become successful and skilled in tech and content creation</li>
+                <li>Make parents proud and help others in learning</li>
+                <li>Grow YouTube channels to reach millions of viewers</li>
+                <li>Continuously explore and learn new skills</li>
+            </ul>
+        </section>
+    </div>
 </div>
 
 <footer>
